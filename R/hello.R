@@ -162,9 +162,6 @@ prep_text <- function(text){
   # remove all line breaks, http://stackoverflow.com/a/21781150/1036500
   text <- gsub("[\r\n]", " ", text)
 
-  # don't include front yaml
-  text <- gsub("(?s)^(---)$.+?^(---)$", "", text)
-
   # don't include text in code chunks: https://regex101.com/#python
   text <- gsub("```\\{.+?\\}.+?```", "", text)
 
