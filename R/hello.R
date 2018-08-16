@@ -191,6 +191,9 @@ prep_text <- function(text){
   
   # don't include bibliographic references
   text <- gsub("\\[@.+?\\]", "", text)
+  
+  # don't include footnote references
+  text <- gsub("\\[\\^.+?\\]", "", text)
 
   # don't include LaTeX \eggs{ham}
   # how to do? problem with capturing \x
